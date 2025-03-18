@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bundled File Test</title>
+</head>
+<body>
+  <script type="module">
+    import JprogressClass from './dist/Jprogress.js';
+    const progress = new JprogressClass();
+    const Elbtn = document.getElementById('test_btn');
+    Elbtn.onclick=()=>{        
+        console.log('JprogressClass loaded:', progress);
+        progress.start();
+        setTimeout(()=>{
+            progress.done();
+        },3000)
+    }
+  </script>
+
+  <button id="test_btn">Test Btn</button>
+</body>
+</html>
